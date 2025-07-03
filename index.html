@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gradient Glow Box</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    #background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    #clickScreen {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      color: white;
+      font-size: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    #mainContent {
+      display: none;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .glow-box {
+      width: 80%;
+      max-width: 800px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 20px;
+      box-shadow: 0 0 20px 4px rgba(255, 105, 180, 0.7);
+      border: 2px solid transparent;
+      animation: glow 3s infinite ease-in-out;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 20px 4px rgba(255, 105, 180, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 30px 8px rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, hotpink, white, hotpink);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textGradient 4s ease-in-out infinite;
+    }
+
+    @keyframes textGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .download-btn {
+      padding: 5px 10px;
+      background: transparent;
+      border: 2px solid;
+      border-image: linear-gradient(90deg, hotpink, white, hotpink) 1;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .download-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <img id="background" src="image.png" alt="Background" />
+  <div id="clickScreen">Click here</div>
+  <audio id="bgAudio" src="song.mp3" loop></audio>
+
+  <div id="mainContent">
+    <div class="glow-box">
+      <div class="row"><div class="gradient-text">Augustus Crack by 2nick</div><a class="download-btn" href="https://www.mediafire.com/file/hy0s32n09q4qki7/Augustus+launcher.zip/file" target="_blank">Download</a></div>
+      <div class="row"><div class="gradient-text">Coming soon</div><a class="download-btn" href="https://example.com/file2.zip" target="_blank">Download</a></div>
+      <div class="row"><div class="gradient-text">Coming soon</div><a class="download-btn" href="https://example.com/file3.zip" target="_blank">Download</a></div>
+      <div class="row"><div class="gradient-text">Coming soon</div><a class="download-btn" href="https://example.com/file4.zip" target="_blank">Download</a></div>
+      <div class="row"><div class="gradient-text">Coming soon</div><a class="download-btn" href="https://example.com/file5.zip" target="_blank">Download</a></div>
+      <div class="row"><div class="gradient-text">Coming soon</div><a class="download-btn" href="https://example.com/file6.zip" target="_blank">Download</a></div>
+      <div class="row"><div class="gradient-text">Coming soon</div><a class="download-btn" href="https://example.com/file7.zip" target="_blank">Download</a></div>
+      <div class="row"><div class="gradient-text">Coming soon</div><a class="download-btn" href="https://example.com/file8.zip" target="_blank">Download</a></div>
+      <div class="row"><div class="gradient-text">Coming soon</div><a class="download-btn" href="https://example.com/file9.zip" target="_blank">Download</a></div>
+      <div class="row"><div class="gradient-text">Coming soon</div><a class="download-btn" href="https://example.com/file10.zip" target="_blank">Download</a></div>
+    </div>
+  </div>
+
+  <video id="bgVideo" src="video.mp4" loop muted style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;"></video>
+
+  <script>
+    const clickScreen = document.getElementById('clickScreen');
+    const mainContent = document.getElementById('mainContent');
+    const audio = document.getElementById('bgAudio');
+    const bgImage = document.getElementById('background');
+    const bgVideo = document.getElementById('bgVideo');
+
+    clickScreen.addEventListener('click', () => {
+      audio.play();
+      clickScreen.style.display = 'none';
+      mainContent.style.display = 'flex';
+
+      if (bgVideo.src && bgVideo.readyState > 0) {
+        bgVideo.style.display = 'block';
+        bgImage.style.display = 'none';
+        bgVideo.play();
+      }
+    });
+  </script>
+</body>
+</html>
