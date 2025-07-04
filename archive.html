@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Archive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      font-family: 'Poppins', Arial, sans-serif;
+      color: white;
+      overflow-x: hidden;
+      padding-bottom: 70px;    }
+
+    .particle-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(#cc0000 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: float 10s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 100%; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .archive-box {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 15px;
+      border: 3px solid;
+      border-image: linear-gradient(45deg, white, #cc0000) 1;
+      border-radius: 12px;
+      text-align: center;
+      animation: rotate-border 6s linear infinite;
+    }
+
+    @keyframes rotate-border {
+      0% { border-image-source: linear-gradient(0deg, white, #cc0000); }
+      100% { border-image-source: linear-gradient(360deg, white, #cc0000); }
+    }
+
+    .archive-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 5px 0;
+    }
+
+    .description {
+      font-size: 14px;
+      margin-bottom: 15px;
+      opacity: 0.85;
+    }
+
+    .download-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: background 0.3s ease;
+      font-weight: 600;
+    }
+
+    .download-button:hover {
+      background: rgba(204, 0, 0, 0.3);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      color: #cc0000;
+      background-color: black;
+      font-weight: 600;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div class="particle-bg"></div>
+  <div class="container">
+    <div class="archive-box">
+      <img src="https://i.imgur.com/yourimage1.png" alt="Client 1">
+      <div class="title">Aether v1</div>
+      <div class="description">The original Aether client with basic modules and bypasses.</div>
+      <a href="https://yourdomain.com/downloads/aether-v1.zip" class="download-button" target="_blank">Download</a>
+    </div>
+
+    <div class="archive-box">
+      <img src="https://i.imgur.com/yourimage2.png" alt="Client 2">
+      <div class="title">GhostAura</div>
+      <div class="description">Silent ghost client with legit aura and anti-detection.</div>
+      <a href="https://yourdomain.com/downloads/ghostaura.zip" class="download-button" target="_blank">Download</a>
+    </div>
+
+    <div class="archive-box">
+      <img src="https://i.imgur.com/yourimage3.png" alt="Client 3">
+      <div class="title">StrikeX</div>
+      <div class="description">PvP focused client with advanced aim assist and reach.</div>
+      <a href="https://yourdomain.com/downloads/strikex.zip" class="download-button" target="_blank">Download</a>
+    </div>
+
+    <div class="archive-box">
+      <img src="https://i.imgur.com/yourimage4.png" alt="Client 4">
+      <div class="title">Phantom Lite</div>
+      <div class="description">Lightweight client with basic fly and scaffold for Hypixel.</div>
+      <a href="https://yourdomain.com/downloads/phantom-lite.zip" class="download-button" target="_blank">Download</a>
+    </div>
+
+    <div class="archive-box">
+      <img src="https://i.imgur.com/yourimage5.png" alt="Client 5">
+      <div class="title">Zenith v2</div>
+      <div class="description">Updated Zenith with new velocity, target strafe, and ESP.</div>
+      <a href="https://yourdomain.com/downloads/zenith-v2.zip" class="download-button" target="_blank">Download</a>
+    </div>
+
+    <div class="archive-box">
+      <img src="https://i.imgur.com/yourimage6.png" alt="Client 6">
+      <div class="title">Skylight</div>
+      <div class="description">Experimental client with rage modules and exploit support.</div>
+      <a href="https://yourdomain.com/downloads/skylight.zip" class="download-button" target="_blank">Download</a>
+    </div>
+
+    <div class="archive-box">
+      <img src="https://i.imgur.com/yourimage7.png" alt="Client 7">
+      <div class="title">Nebula Classic</div>
+      <div class="description">Legacy version of Nebula used in 1.8 PvP tournaments.</div>
+      <a href="https://yourdomain.com/downloads/nebula-classic.zip" class="download-button" target="_blank">Download</a>
+    </div>
+
+    <div class="archive-box">
+      <img src="https://i.imgur.com/yourimage8.png" alt="Client 8">
+      <div class="title">Inferno</div>
+      <div class="description">Aggressive client with scaffold, longjump, and tower hacks.</div>
+      <a href="https://yourdomain.com/downloads/inferno.zip" class="download-button" target="_blank">Download</a>
+    </div>
+
+    <div class="archive-box">
+      <img src="https://i.imgur.com/yourimage9.png" alt="Client 9">
+      <div class="title">Nova v3</div>
+      <div class="description">Stealth cheat with new NCP bypass modules for 2025.</div>
+      <a href="https://yourdomain.com/downloads/nova-v3.zip" class="download-button" target="_blank">Download</a>
+    </div>
+
+    <div class="archive-box">
+      <img src="https://i.imgur.com/yourimage10.png" alt="Client 10">
+      <div class="title">Crimson Build</div>
+      <div class="description">Custom build of Crimson for practice servers and Skywars.</div>
+      <a href="https://yourdomain.com/downloads/crimson.zip" class="download-button" target="_blank">Download</a>
+    </div>
+  </div>
+
+</body>
+</html>
